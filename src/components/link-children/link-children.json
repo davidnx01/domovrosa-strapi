@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_link_children_link_children",
+  "info": {
+    "displayName": "Link Children"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_navigation_link_navigation_links",
+  "info": {
+    "displayName": "Navigation Link"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
+    "childs": {
+      "type": "component",
+      "component": "link-children.link-children",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
