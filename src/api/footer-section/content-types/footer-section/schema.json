@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "footer_sections",
+  "info": {
+    "singularName": "footer-section",
+    "pluralName": "footer-sections",
+    "displayName": "FooterSection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "component": "heading.heading",
+      "repeatable": false
+    },
+    "partners": {
+      "type": "component",
+      "component": "partners.partners",
+      "repeatable": true
+    },
+    "menus": {
+      "type": "component",
+      "component": "footer-menu.footer-menu",
+      "repeatable": true
+    }
+  }
+}

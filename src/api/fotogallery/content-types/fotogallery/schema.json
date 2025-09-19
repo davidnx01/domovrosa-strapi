@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fotogalleries",
+  "info": {
+    "singularName": "fotogallery",
+    "pluralName": "fotogalleries",
+    "displayName": "Fotogallery"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "content": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "fotogallery_category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::fotogallery-category.fotogallery-category"
+    }
+  }
+}

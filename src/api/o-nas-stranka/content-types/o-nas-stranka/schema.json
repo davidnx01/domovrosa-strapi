@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "o_nas_strankas",
+  "info": {
+    "singularName": "o-nas-stranka",
+    "pluralName": "o-nas-strankas",
+    "displayName": "O Nás Stránka"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "component": "page.heading",
+      "repeatable": false
+    },
+    "seo": {
+      "type": "component",
+      "component": "page.seo",
+      "repeatable": false
+    },
+    "tabs": {
+      "type": "component",
+      "component": "page.tabs",
+      "repeatable": true
+    }
+  }
+}
