@@ -438,6 +438,64 @@ export interface ApiBlogSectionBlogSection extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiContactsPageContactsPage extends Struct.SingleTypeSchema {
+  collectionName: 'contacts_pages';
+  info: {
+    displayName: 'ContactsPage';
+    pluralName: 'contacts-pages';
+    singularName: 'contacts-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.Component<'page.heading', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contacts-page.contacts-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'page.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiDocumentsPageDocumentsPage extends Struct.SingleTypeSchema {
+  collectionName: 'documents_pages';
+  info: {
+    displayName: 'Documents-page';
+    pluralName: 'documents-pages';
+    singularName: 'documents-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.Component<'page.heading', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::documents-page.documents-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    tabs: Schema.Attribute.Component<'page.tabs', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFooterSectionFooterSection extends Struct.SingleTypeSchema {
   collectionName: 'footer_sections';
   info: {
@@ -462,6 +520,36 @@ export interface ApiFooterSectionFooterSection extends Struct.SingleTypeSchema {
     menus: Schema.Attribute.Component<'footer-menu.footer-menu', true>;
     partners: Schema.Attribute.Component<'partners.partners', true>;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFotogaleriaStrankaFotogaleriaStranka
+  extends Struct.SingleTypeSchema {
+  collectionName: 'fotogaleria_strankas';
+  info: {
+    displayName: 'Fotogal\u00E9ria Str\u00E1nka';
+    pluralName: 'fotogaleria-strankas';
+    singularName: 'fotogaleria-stranka';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.Component<'page.heading', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::fotogaleria-stranka.fotogaleria-stranka'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'page.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -552,10 +640,17 @@ export interface ApiGeneralGeneral extends Struct.SingleTypeSchema {
   attributes: {
     address: Schema.Attribute.String;
     city: Schema.Attribute.String;
+    company_address: Schema.Attribute.String;
+    company_city: Schema.Attribute.String;
+    company_name: Schema.Attribute.String;
+    company_post_code: Schema.Attribute.String;
+    company_state: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    dic: Schema.Attribute.String;
     email: Schema.Attribute.String;
+    ico: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -566,6 +661,40 @@ export interface ApiGeneralGeneral extends Struct.SingleTypeSchema {
     phone: Schema.Attribute.String;
     post_code: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMemberMember extends Struct.CollectionTypeSchema {
+  collectionName: 'members';
+  info: {
+    displayName: 'Member';
+    pluralName: 'members';
+    singularName: 'member';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email_1: Schema.Attribute.String;
+    email_2: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::member.member'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    phone_1: Schema.Attribute.String;
+    phone_2: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    role: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1207,10 +1336,14 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::about-section.about-section': ApiAboutSectionAboutSection;
       'api::blog-section.blog-section': ApiBlogSectionBlogSection;
+      'api::contacts-page.contacts-page': ApiContactsPageContactsPage;
+      'api::documents-page.documents-page': ApiDocumentsPageDocumentsPage;
       'api::footer-section.footer-section': ApiFooterSectionFooterSection;
+      'api::fotogaleria-stranka.fotogaleria-stranka': ApiFotogaleriaStrankaFotogaleriaStranka;
       'api::fotogallery-category.fotogallery-category': ApiFotogalleryCategoryFotogalleryCategory;
       'api::fotogallery.fotogallery': ApiFotogalleryFotogallery;
       'api::general.general': ApiGeneralGeneral;
+      'api::member.member': ApiMemberMember;
       'api::navigation.navigation': ApiNavigationNavigation;
       'api::o-nas-stranka.o-nas-stranka': ApiONasStrankaONasStranka;
       'api::service-section.service-section': ApiServiceSectionServiceSection;

@@ -64,3 +64,8 @@ Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/
 
 info@webdavid.sk
 Admin123
+
+
+export async function fetchGeneral() {
+  return fetchData("general", { populate: ["logo"] });
+}

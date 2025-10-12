@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "fotogaleria_strankas",
+  "info": {
+    "singularName": "fotogaleria-stranka",
+    "pluralName": "fotogaleria-strankas",
+    "displayName": "Fotogaléria Stránka"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "component": "page.heading",
+      "repeatable": false
+    },
+    "seo": {
+      "type": "component",
+      "component": "page.seo",
+      "repeatable": false
+    }
+  }
+}

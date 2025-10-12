@@ -103,6 +103,10 @@ export interface PageTabs extends Struct.ComponentSchema {
           preset: 'defaultHtml';
         }
       >;
+    files: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     images: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',

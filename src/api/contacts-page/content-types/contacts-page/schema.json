@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "contacts_pages",
+  "info": {
+    "singularName": "contacts-page",
+    "pluralName": "contacts-pages",
+    "displayName": "ContactsPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "component": "page.heading",
+      "repeatable": false
+    },
+    "seo": {
+      "type": "component",
+      "component": "page.seo",
+      "repeatable": false
+    }
+  }
+}
