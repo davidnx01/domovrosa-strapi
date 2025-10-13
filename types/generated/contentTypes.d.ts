@@ -766,6 +766,36 @@ export interface ApiONasStrankaONasStranka extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiPostupPrijatiaPostupPrijatia
+  extends Struct.SingleTypeSchema {
+  collectionName: 'postup_prijatias';
+  info: {
+    displayName: 'Postup prijatia';
+    pluralName: 'postup-prijatias';
+    singularName: 'postup-prijatia';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.Component<'page.heading', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::postup-prijatia.postup-prijatia'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    tabs: Schema.Attribute.Component<'page.tabs', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiServiceSectionServiceSection
   extends Struct.SingleTypeSchema {
   collectionName: 'service_sections';
@@ -1346,6 +1376,7 @@ declare module '@strapi/strapi' {
       'api::member.member': ApiMemberMember;
       'api::navigation.navigation': ApiNavigationNavigation;
       'api::o-nas-stranka.o-nas-stranka': ApiONasStrankaONasStranka;
+      'api::postup-prijatia.postup-prijatia': ApiPostupPrijatiaPostupPrijatia;
       'api::service-section.service-section': ApiServiceSectionServiceSection;
       'api::slider.slider': ApiSliderSlider;
       'plugin::content-releases.release': PluginContentReleasesRelease;

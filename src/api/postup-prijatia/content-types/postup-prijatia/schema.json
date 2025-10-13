@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "postup_prijatias",
+  "info": {
+    "singularName": "postup-prijatia",
+    "pluralName": "postup-prijatias",
+    "displayName": "Postup prijatia"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "component": "page.heading",
+      "repeatable": false
+    },
+    "tabs": {
+      "type": "component",
+      "component": "page.tabs",
+      "repeatable": true
+    }
+  }
+}
