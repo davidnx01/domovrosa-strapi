@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "protispolocenska_pages",
+  "info": {
+    "singularName": "protispolocenska-page",
+    "pluralName": "protispolocenska-pages",
+    "displayName": "Protispolocenska-page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "component": "page.heading",
+      "repeatable": false
+    },
+    "tabs": {
+      "type": "component",
+      "component": "page.tabs",
+      "repeatable": true
+    }
+  }
+}

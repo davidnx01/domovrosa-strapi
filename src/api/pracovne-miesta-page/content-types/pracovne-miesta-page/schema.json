@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "pracovne_miesta_pages",
+  "info": {
+    "singularName": "pracovne-miesta-page",
+    "pluralName": "pracovne-miesta-pages",
+    "displayName": "Pracovné Miesta Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "component": "page.heading",
+      "repeatable": false
+    },
+    "tabs": {
+      "type": "component",
+      "component": "page.tabs",
+      "repeatable": true
+    }
+  }
+}

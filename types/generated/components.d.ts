@@ -49,6 +49,7 @@ export interface LinkChildrenLinkChildren extends Struct.ComponentSchema {
     displayName: 'Link Children';
   };
   attributes: {
+    isExternal: Schema.Attribute.Boolean;
     link: Schema.Attribute.String;
     name: Schema.Attribute.String;
   };

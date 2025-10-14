@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "spolupraca_pages",
+  "info": {
+    "singularName": "spolupraca-page",
+    "pluralName": "spolupraca-pages",
+    "displayName": "Spolupráca page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "component": "page.heading",
+      "repeatable": false
+    },
+    "tabs": {
+      "type": "component",
+      "component": "page.tabs",
+      "repeatable": true
+    }
+  }
+}

@@ -496,6 +496,35 @@ export interface ApiDocumentsPageDocumentsPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiEkonomikaPageEkonomikaPage extends Struct.SingleTypeSchema {
+  collectionName: 'ekonomika_pages';
+  info: {
+    displayName: 'Ekonomika page';
+    pluralName: 'ekonomika-pages';
+    singularName: 'ekonomika-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.Component<'page.heading', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::ekonomika-page.ekonomika-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    tabs: Schema.Attribute.Component<'page.tabs', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFooterSectionFooterSection extends Struct.SingleTypeSchema {
   collectionName: 'footer_sections';
   info: {
@@ -621,6 +650,35 @@ export interface ApiFotogalleryFotogallery extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'name'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiGdprPageGdprPage extends Struct.SingleTypeSchema {
+  collectionName: 'gdpr_pages';
+  info: {
+    displayName: 'GDPR Page';
+    pluralName: 'gdpr-pages';
+    singularName: 'gdpr-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.Component<'page.heading', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::gdpr-page.gdpr-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    tabs: Schema.Attribute.Component<'page.tabs', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -796,6 +854,96 @@ export interface ApiPostupPrijatiaPostupPrijatia
   };
 }
 
+export interface ApiPracovneMiestaPagePracovneMiestaPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'pracovne_miesta_pages';
+  info: {
+    displayName: 'Pracovn\u00E9 Miesta Page';
+    pluralName: 'pracovne-miesta-pages';
+    singularName: 'pracovne-miesta-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.Component<'page.heading', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::pracovne-miesta-page.pracovne-miesta-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    tabs: Schema.Attribute.Component<'page.tabs', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiProtispolocenskaPageProtispolocenskaPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'protispolocenska_pages';
+  info: {
+    displayName: 'Protispolocenska-page';
+    pluralName: 'protispolocenska-pages';
+    singularName: 'protispolocenska-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.Component<'page.heading', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::protispolocenska-page.protispolocenska-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    tabs: Schema.Attribute.Component<'page.tabs', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiRehabilitaciaPageRehabilitaciaPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'rehabilitacia_pages';
+  info: {
+    displayName: 'Rehabilit\u00E1cia page';
+    pluralName: 'rehabilitacia-pages';
+    singularName: 'rehabilitacia-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.Component<'page.heading', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::rehabilitacia-page.rehabilitacia-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    tabs: Schema.Attribute.Component<'page.tabs', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiServiceSectionServiceSection
   extends Struct.SingleTypeSchema {
   collectionName: 'service_sections';
@@ -849,6 +997,96 @@ export interface ApiSliderSlider extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     slides: Schema.Attribute.Component<'slider.slider', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSocialneSluzbyPageSocialneSluzbyPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'socialne_sluzby_pages';
+  info: {
+    displayName: 'Soci\u00E1lne slu\u017Eby page';
+    pluralName: 'socialne-sluzby-pages';
+    singularName: 'socialne-sluzby-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.Component<'page.heading', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::socialne-sluzby-page.socialne-sluzby-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    tabs: Schema.Attribute.Component<'page.tabs', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSpolupracaPageSpolupracaPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'spolupraca_pages';
+  info: {
+    displayName: 'Spolupr\u00E1ca page';
+    pluralName: 'spolupraca-pages';
+    singularName: 'spolupraca-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.Component<'page.heading', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::spolupraca-page.spolupraca-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    tabs: Schema.Attribute.Component<'page.tabs', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiZaujmovaCinnostPageZaujmovaCinnostPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'zaujmova_cinnost_pages';
+  info: {
+    displayName: 'Z\u00E1ujmov\u00E1 \u010Dinnos\u0165 page';
+    pluralName: 'zaujmova-cinnost-pages';
+    singularName: 'zaujmova-cinnost-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.Component<'page.heading', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::zaujmova-cinnost-page.zaujmova-cinnost-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    tabs: Schema.Attribute.Component<'page.tabs', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1368,17 +1606,25 @@ declare module '@strapi/strapi' {
       'api::blog-section.blog-section': ApiBlogSectionBlogSection;
       'api::contacts-page.contacts-page': ApiContactsPageContactsPage;
       'api::documents-page.documents-page': ApiDocumentsPageDocumentsPage;
+      'api::ekonomika-page.ekonomika-page': ApiEkonomikaPageEkonomikaPage;
       'api::footer-section.footer-section': ApiFooterSectionFooterSection;
       'api::fotogaleria-stranka.fotogaleria-stranka': ApiFotogaleriaStrankaFotogaleriaStranka;
       'api::fotogallery-category.fotogallery-category': ApiFotogalleryCategoryFotogalleryCategory;
       'api::fotogallery.fotogallery': ApiFotogalleryFotogallery;
+      'api::gdpr-page.gdpr-page': ApiGdprPageGdprPage;
       'api::general.general': ApiGeneralGeneral;
       'api::member.member': ApiMemberMember;
       'api::navigation.navigation': ApiNavigationNavigation;
       'api::o-nas-stranka.o-nas-stranka': ApiONasStrankaONasStranka;
       'api::postup-prijatia.postup-prijatia': ApiPostupPrijatiaPostupPrijatia;
+      'api::pracovne-miesta-page.pracovne-miesta-page': ApiPracovneMiestaPagePracovneMiestaPage;
+      'api::protispolocenska-page.protispolocenska-page': ApiProtispolocenskaPageProtispolocenskaPage;
+      'api::rehabilitacia-page.rehabilitacia-page': ApiRehabilitaciaPageRehabilitaciaPage;
       'api::service-section.service-section': ApiServiceSectionServiceSection;
       'api::slider.slider': ApiSliderSlider;
+      'api::socialne-sluzby-page.socialne-sluzby-page': ApiSocialneSluzbyPageSocialneSluzbyPage;
+      'api::spolupraca-page.spolupraca-page': ApiSpolupracaPageSpolupracaPage;
+      'api::zaujmova-cinnost-page.zaujmova-cinnost-page': ApiZaujmovaCinnostPageZaujmovaCinnostPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

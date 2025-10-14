@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "ekonomika_pages",
+  "info": {
+    "singularName": "ekonomika-page",
+    "pluralName": "ekonomika-pages",
+    "displayName": "Ekonomika page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "component": "page.heading",
+      "repeatable": false
+    },
+    "tabs": {
+      "type": "component",
+      "component": "page.tabs",
+      "repeatable": true
+    }
+  }
+}

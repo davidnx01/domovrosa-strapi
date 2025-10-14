@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "gdpr_pages",
+  "info": {
+    "singularName": "gdpr-page",
+    "pluralName": "gdpr-pages",
+    "displayName": "GDPR Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "component": "page.heading",
+      "repeatable": false
+    },
+    "tabs": {
+      "type": "component",
+      "component": "page.tabs",
+      "repeatable": true
+    }
+  }
+}

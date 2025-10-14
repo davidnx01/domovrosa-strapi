@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "zaujmova_cinnost_pages",
+  "info": {
+    "singularName": "zaujmova-cinnost-page",
+    "pluralName": "zaujmova-cinnost-pages",
+    "displayName": "Záujmová činnosť page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "component": "page.heading",
+      "repeatable": false
+    },
+    "tabs": {
+      "type": "component",
+      "component": "page.tabs",
+      "repeatable": true
+    }
+  }
+}
