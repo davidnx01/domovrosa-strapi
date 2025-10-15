@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Order"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "code": {
+      "type": "string"
+    },
+    "number": {
+      "type": "decimal"
+    },
+    "date_start": {
+      "type": "string"
+    },
+    "publication_date": {
+      "type": "string"
+    },
+    "signed_by": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "partner": {
+      "type": "string"
+    },
+    "ico": {
+      "type": "string"
+    },
+    "order_category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::order-category.order-category"
+    }
+  }
+}

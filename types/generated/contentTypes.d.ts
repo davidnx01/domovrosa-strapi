@@ -824,6 +824,72 @@ export interface ApiONasStrankaONasStranka extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiOrderCategoryOrderCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'order_categories';
+  info: {
+    displayName: 'Order Category';
+    pluralName: 'order-categories';
+    singularName: 'order-category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::order-category.order-category'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'name'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
+  collectionName: 'orders';
+  info: {
+    displayName: 'Order';
+    pluralName: 'orders';
+    singularName: 'order';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    code: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    date_start: Schema.Attribute.String;
+    ico: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::order.order'> &
+      Schema.Attribute.Private;
+    number: Schema.Attribute.Decimal;
+    order_category: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::order-category.order-category'
+    >;
+    partner: Schema.Attribute.String;
+    publication_date: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    signed_by: Schema.Attribute.String;
+    subject: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPostupPrijatiaPostupPrijatia
   extends Struct.SingleTypeSchema {
   collectionName: 'postup_prijatias';
@@ -1408,11 +1474,11 @@ export interface PluginUploadFolder extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
+    children: Schema.Attribute.Relation<'oneToMany', 'plugin::upload.folder'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     files: Schema.Attribute.Relation<'oneToMany', 'plugin::upload.file'>;
-    children: Schema.Attribute.Relation<'oneToMany', 'plugin::upload.folder'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1616,6 +1682,8 @@ declare module '@strapi/strapi' {
       'api::member.member': ApiMemberMember;
       'api::navigation.navigation': ApiNavigationNavigation;
       'api::o-nas-stranka.o-nas-stranka': ApiONasStrankaONasStranka;
+      'api::order-category.order-category': ApiOrderCategoryOrderCategory;
+      'api::order.order': ApiOrderOrder;
       'api::postup-prijatia.postup-prijatia': ApiPostupPrijatiaPostupPrijatia;
       'api::pracovne-miesta-page.pracovne-miesta-page': ApiPracovneMiestaPagePracovneMiestaPage;
       'api::protispolocenska-page.protispolocenska-page': ApiProtispolocenskaPageProtispolocenskaPage;
