@@ -14,8 +14,8 @@
     "code": {
       "type": "string"
     },
-    "number": {
-      "type": "decimal"
+    "price": {
+      "type": "string"
     },
     "date_start": {
       "type": "string"

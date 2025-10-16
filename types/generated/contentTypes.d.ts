@@ -874,12 +874,12 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::order.order'> &
       Schema.Attribute.Private;
-    number: Schema.Attribute.Decimal;
     order_category: Schema.Attribute.Relation<
       'oneToOne',
       'api::order-category.order-category'
     >;
     partner: Schema.Attribute.String;
+    price: Schema.Attribute.String;
     publication_date: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     signed_by: Schema.Attribute.String;
