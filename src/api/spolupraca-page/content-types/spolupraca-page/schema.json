@@ -4,7 +4,7 @@
   "info": {
     "singularName": "spolupraca-page",
     "pluralName": "spolupraca-pages",
-    "displayName": "Spolupráca page"
+    "displayName": "Stránka - Spolupráca"
   },
   "options": {
     "draftAndPublish": true

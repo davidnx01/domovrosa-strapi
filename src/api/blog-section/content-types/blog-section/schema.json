@@ -4,7 +4,7 @@
   "info": {
     "singularName": "blog-section",
     "pluralName": "blog-sections",
-    "displayName": "BlogSection"
+    "displayName": "Sekcia - Fotogaléria"
   },
   "options": {
     "draftAndPublish": true

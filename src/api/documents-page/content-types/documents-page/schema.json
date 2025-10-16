@@ -4,7 +4,7 @@
   "info": {
     "singularName": "documents-page",
     "pluralName": "documents-pages",
-    "displayName": "Documents-page"
+    "displayName": "Stránka - Dokumenty"
   },
   "options": {
     "draftAndPublish": true

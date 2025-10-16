@@ -4,7 +4,7 @@
   "info": {
     "singularName": "fotogaleria-stranka",
     "pluralName": "fotogaleria-strankas",
-    "displayName": "Fotogaléria Stránka"
+    "displayName": "Stránka - Fotogalérie"
   },
   "options": {
     "draftAndPublish": true

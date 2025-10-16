@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "gdpr_pages",
+  "collectionName": "invoices_pages",
   "info": {
-    "singularName": "gdpr-page",
-    "pluralName": "gdpr-pages",
-    "displayName": "Stránka - GDPR"
+    "singularName": "invoices-page",
+    "pluralName": "invoices-pages",
+    "displayName": "invoices-page"
   },
   "options": {
     "draftAndPublish": true
@@ -15,11 +15,6 @@
       "type": "component",
       "component": "page.heading",
       "repeatable": false
-    },
-    "tabs": {
-      "type": "component",
-      "component": "page.tabs",
-      "repeatable": true
     }
   }
 }

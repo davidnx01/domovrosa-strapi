@@ -376,7 +376,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiAboutSectionAboutSection extends Struct.SingleTypeSchema {
   collectionName: 'about_sections';
   info: {
-    displayName: 'AboutSection';
+    displayName: 'Sekcia - O n\u00E1s';
     pluralName: 'about-sections';
     singularName: 'about-section';
   };
@@ -413,7 +413,7 @@ export interface ApiAboutSectionAboutSection extends Struct.SingleTypeSchema {
 export interface ApiBlogSectionBlogSection extends Struct.SingleTypeSchema {
   collectionName: 'blog_sections';
   info: {
-    displayName: 'BlogSection';
+    displayName: 'Sekcia - Fotogal\u00E9ria';
     pluralName: 'blog-sections';
     singularName: 'blog-section';
   };
@@ -441,7 +441,7 @@ export interface ApiBlogSectionBlogSection extends Struct.SingleTypeSchema {
 export interface ApiContactsPageContactsPage extends Struct.SingleTypeSchema {
   collectionName: 'contacts_pages';
   info: {
-    displayName: 'ContactsPage';
+    displayName: 'Str\u00E1nka - Kontakty';
     pluralName: 'contacts-pages';
     singularName: 'contacts-page';
   };
@@ -470,7 +470,7 @@ export interface ApiContactsPageContactsPage extends Struct.SingleTypeSchema {
 export interface ApiDocumentsPageDocumentsPage extends Struct.SingleTypeSchema {
   collectionName: 'documents_pages';
   info: {
-    displayName: 'Documents-page';
+    displayName: 'Str\u00E1nka - Dokumenty';
     pluralName: 'documents-pages';
     singularName: 'documents-page';
   };
@@ -499,7 +499,7 @@ export interface ApiDocumentsPageDocumentsPage extends Struct.SingleTypeSchema {
 export interface ApiEkonomikaPageEkonomikaPage extends Struct.SingleTypeSchema {
   collectionName: 'ekonomika_pages';
   info: {
-    displayName: 'Ekonomika page';
+    displayName: 'Str\u00E1nka - Ekonomika';
     pluralName: 'ekonomika-pages';
     singularName: 'ekonomika-page';
   };
@@ -528,7 +528,7 @@ export interface ApiEkonomikaPageEkonomikaPage extends Struct.SingleTypeSchema {
 export interface ApiFooterSectionFooterSection extends Struct.SingleTypeSchema {
   collectionName: 'footer_sections';
   info: {
-    displayName: 'FooterSection';
+    displayName: 'Sekcia - P\u00E4ti\u010Dka';
     pluralName: 'footer-sections';
     singularName: 'footer-section';
   };
@@ -559,7 +559,7 @@ export interface ApiFotogaleriaStrankaFotogaleriaStranka
   extends Struct.SingleTypeSchema {
   collectionName: 'fotogaleria_strankas';
   info: {
-    displayName: 'Fotogal\u00E9ria Str\u00E1nka';
+    displayName: 'Str\u00E1nka - Fotogal\u00E9rie';
     pluralName: 'fotogaleria-strankas';
     singularName: 'fotogaleria-stranka';
   };
@@ -659,7 +659,7 @@ export interface ApiFotogalleryFotogallery extends Struct.CollectionTypeSchema {
 export interface ApiGdprPageGdprPage extends Struct.SingleTypeSchema {
   collectionName: 'gdpr_pages';
   info: {
-    displayName: 'GDPR Page';
+    displayName: 'Str\u00E1nka - GDPR';
     pluralName: 'gdpr-pages';
     singularName: 'gdpr-page';
   };
@@ -725,6 +725,34 @@ export interface ApiGeneralGeneral extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiInvoicesPageInvoicesPage extends Struct.SingleTypeSchema {
+  collectionName: 'invoices_pages';
+  info: {
+    displayName: 'invoices-page';
+    pluralName: 'invoices-pages';
+    singularName: 'invoices-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.Component<'page.heading', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::invoices-page.invoices-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiMemberMember extends Struct.CollectionTypeSchema {
   collectionName: 'members';
   info: {
@@ -762,7 +790,7 @@ export interface ApiMemberMember extends Struct.CollectionTypeSchema {
 export interface ApiNavigationNavigation extends Struct.SingleTypeSchema {
   collectionName: 'navigations';
   info: {
-    displayName: 'Navigation';
+    displayName: 'Navig\u00E1cia';
     pluralName: 'navigations';
     singularName: 'navigation';
   };
@@ -797,7 +825,7 @@ export interface ApiNavigationNavigation extends Struct.SingleTypeSchema {
 export interface ApiONasStrankaONasStranka extends Struct.SingleTypeSchema {
   collectionName: 'o_nas_strankas';
   info: {
-    displayName: 'O N\u00E1s Str\u00E1nka';
+    displayName: 'Str\u00E1nka - O n\u00E1s';
     pluralName: 'o-nas-strankas';
     singularName: 'o-nas-stranka';
   };
@@ -894,7 +922,7 @@ export interface ApiPostupPrijatiaPostupPrijatia
   extends Struct.SingleTypeSchema {
   collectionName: 'postup_prijatias';
   info: {
-    displayName: 'Postup prijatia';
+    displayName: 'Str\u00E1nka - Postup prijatia';
     pluralName: 'postup-prijatias';
     singularName: 'postup-prijatia';
   };
@@ -924,7 +952,7 @@ export interface ApiPracovneMiestaPagePracovneMiestaPage
   extends Struct.SingleTypeSchema {
   collectionName: 'pracovne_miesta_pages';
   info: {
-    displayName: 'Pracovn\u00E9 Miesta Page';
+    displayName: 'Str\u00E1nka - Pracovn\u00E9 miesta';
     pluralName: 'pracovne-miesta-pages';
     singularName: 'pracovne-miesta-page';
   };
@@ -954,7 +982,7 @@ export interface ApiProtispolocenskaPageProtispolocenskaPage
   extends Struct.SingleTypeSchema {
   collectionName: 'protispolocenska_pages';
   info: {
-    displayName: 'Protispolocenska-page';
+    displayName: 'Str\u00E1nka - Protispolo\u010Densk\u00E1';
     pluralName: 'protispolocenska-pages';
     singularName: 'protispolocenska-page';
   };
@@ -984,7 +1012,7 @@ export interface ApiRehabilitaciaPageRehabilitaciaPage
   extends Struct.SingleTypeSchema {
   collectionName: 'rehabilitacia_pages';
   info: {
-    displayName: 'Rehabilit\u00E1cia page';
+    displayName: 'Str\u00E1nka - Rehabilit\u00E1cia';
     pluralName: 'rehabilitacia-pages';
     singularName: 'rehabilitacia-page';
   };
@@ -1014,7 +1042,7 @@ export interface ApiServiceSectionServiceSection
   extends Struct.SingleTypeSchema {
   collectionName: 'service_sections';
   info: {
-    displayName: 'ServiceSection';
+    displayName: 'Sekcia - Slu\u017Eby';
     pluralName: 'service-sections';
     singularName: 'service-section';
   };
@@ -1044,7 +1072,7 @@ export interface ApiServiceSectionServiceSection
 export interface ApiSliderSlider extends Struct.SingleTypeSchema {
   collectionName: 'sliders';
   info: {
-    displayName: 'Slider';
+    displayName: '\u00DAvodn\u00FD slider';
     pluralName: 'sliders';
     singularName: 'slider';
   };
@@ -1073,7 +1101,7 @@ export interface ApiSocialneSluzbyPageSocialneSluzbyPage
   extends Struct.SingleTypeSchema {
   collectionName: 'socialne_sluzby_pages';
   info: {
-    displayName: 'Soci\u00E1lne slu\u017Eby page';
+    displayName: 'Str\u00E1nka - Soci\u00E1lne slu\u017Eby';
     pluralName: 'socialne-sluzby-pages';
     singularName: 'socialne-sluzby-page';
   };
@@ -1103,7 +1131,7 @@ export interface ApiSpolupracaPageSpolupracaPage
   extends Struct.SingleTypeSchema {
   collectionName: 'spolupraca_pages';
   info: {
-    displayName: 'Spolupr\u00E1ca page';
+    displayName: 'Str\u00E1nka - Spolupr\u00E1ca';
     pluralName: 'spolupraca-pages';
     singularName: 'spolupraca-page';
   };
@@ -1133,7 +1161,7 @@ export interface ApiZaujmovaCinnostPageZaujmovaCinnostPage
   extends Struct.SingleTypeSchema {
   collectionName: 'zaujmova_cinnost_pages';
   info: {
-    displayName: 'Z\u00E1ujmov\u00E1 \u010Dinnos\u0165 page';
+    displayName: 'Str\u00E1nka - Z\u00E1ujmov\u00E1 \u010Dinnos\u0165';
     pluralName: 'zaujmova-cinnost-pages';
     singularName: 'zaujmova-cinnost-page';
   };
@@ -1679,6 +1707,7 @@ declare module '@strapi/strapi' {
       'api::fotogallery.fotogallery': ApiFotogalleryFotogallery;
       'api::gdpr-page.gdpr-page': ApiGdprPageGdprPage;
       'api::general.general': ApiGeneralGeneral;
+      'api::invoices-page.invoices-page': ApiInvoicesPageInvoicesPage;
       'api::member.member': ApiMemberMember;
       'api::navigation.navigation': ApiNavigationNavigation;
       'api::o-nas-stranka.o-nas-stranka': ApiONasStrankaONasStranka;

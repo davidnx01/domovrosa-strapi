@@ -4,7 +4,7 @@
   "info": {
     "singularName": "postup-prijatia",
     "pluralName": "postup-prijatias",
-    "displayName": "Postup prijatia"
+    "displayName": "Stránka - Postup prijatia"
   },
   "options": {
     "draftAndPublish": true

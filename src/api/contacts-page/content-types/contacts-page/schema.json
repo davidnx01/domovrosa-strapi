@@ -4,7 +4,7 @@
   "info": {
     "singularName": "contacts-page",
     "pluralName": "contacts-pages",
-    "displayName": "ContactsPage"
+    "displayName": "Stránka - Kontakty"
   },
   "options": {
     "draftAndPublish": true
