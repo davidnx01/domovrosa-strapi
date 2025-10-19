@@ -56,6 +56,11 @@
     },
     "dic": {
       "type": "string"
+    },
+    "seo": {
+      "type": "component",
+      "component": "page.seo",
+      "repeatable": false
     }
   }
 }
