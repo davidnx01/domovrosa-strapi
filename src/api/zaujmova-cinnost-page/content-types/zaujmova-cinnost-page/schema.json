@@ -20,6 +20,16 @@
       "type": "component",
       "component": "page.tabs",
       "repeatable": true
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }

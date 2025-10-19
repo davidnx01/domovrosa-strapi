@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "jedalny_listok_pages",
+  "info": {
+    "singularName": "jedalny-listok-page",
+    "pluralName": "jedalny-listok-pages",
+    "displayName": "jedalny-listok-page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "component": "page.heading",
+      "repeatable": false
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

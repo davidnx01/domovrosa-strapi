@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "novinky_pages",
+  "info": {
+    "singularName": "novinky-page",
+    "pluralName": "novinky-pages",
+    "displayName": "Novinky page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "component": "heading.heading",
+      "repeatable": false
+    },
+    "tabs": {
+      "type": "component",
+      "component": "page.tabs",
+      "repeatable": true
+    }
+  }
+}

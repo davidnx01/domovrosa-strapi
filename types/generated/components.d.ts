@@ -140,12 +140,24 @@ export interface ServiceCardServiceCard extends Struct.ComponentSchema {
   };
 }
 
+export interface SliderButton extends Struct.ComponentSchema {
+  collectionName: 'components_slider_buttons';
+  info: {
+    displayName: 'button';
+  };
+  attributes: {
+    href: Schema.Attribute.String;
+    name: Schema.Attribute.String;
+  };
+}
+
 export interface SliderSlider extends Struct.ComponentSchema {
   collectionName: 'components_slider_sliders';
   info: {
     displayName: 'Slider';
   };
   attributes: {
+    button: Schema.Attribute.Component<'slider.button', false>;
     description: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     subtitle: Schema.Attribute.String;
@@ -167,6 +179,7 @@ declare module '@strapi/strapi' {
       'page.tabs': PageTabs;
       'partners.partners': PartnersPartners;
       'service-card.service-card': ServiceCardServiceCard;
+      'slider.button': SliderButton;
       'slider.slider': SliderSlider;
     }
   }

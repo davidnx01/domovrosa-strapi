@@ -728,7 +728,7 @@ export interface ApiGeneralGeneral extends Struct.SingleTypeSchema {
 export interface ApiInvoicesPageInvoicesPage extends Struct.SingleTypeSchema {
   collectionName: 'invoices_pages';
   info: {
-    displayName: 'invoices-page';
+    displayName: 'Str\u00E1nka - Verejn\u00FD register zml\u00FAv';
     pluralName: 'invoices-pages';
     singularName: 'invoices-page';
   };
@@ -744,6 +744,39 @@ export interface ApiInvoicesPageInvoicesPage extends Struct.SingleTypeSchema {
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::invoices-page.invoices-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiJedalnyListokPageJedalnyListokPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'jedalny_listok_pages';
+  info: {
+    displayName: 'jedalny-listok-page';
+    pluralName: 'jedalny-listok-pages';
+    singularName: 'jedalny-listok-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.Component<'page.heading', false>;
+    images: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::jedalny-listok-page.jedalny-listok-page'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
@@ -816,6 +849,35 @@ export interface ApiNavigationNavigation extends Struct.SingleTypeSchema {
       'navigation-link.navigation-link',
       true
     >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiNovinkyPageNovinkyPage extends Struct.SingleTypeSchema {
+  collectionName: 'novinky_pages';
+  info: {
+    displayName: 'Novinky page';
+    pluralName: 'novinky-pages';
+    singularName: 'novinky-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.Component<'heading.heading', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::novinky-page.novinky-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    tabs: Schema.Attribute.Component<'page.tabs', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1172,6 +1234,10 @@ export interface ApiZaujmovaCinnostPageZaujmovaCinnostPage
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    gallery: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     heading: Schema.Attribute.Component<'page.heading', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -1502,11 +1568,11 @@ export interface PluginUploadFolder extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
-    children: Schema.Attribute.Relation<'oneToMany', 'plugin::upload.folder'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     files: Schema.Attribute.Relation<'oneToMany', 'plugin::upload.file'>;
+    children: Schema.Attribute.Relation<'oneToMany', 'plugin::upload.folder'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1708,8 +1774,10 @@ declare module '@strapi/strapi' {
       'api::gdpr-page.gdpr-page': ApiGdprPageGdprPage;
       'api::general.general': ApiGeneralGeneral;
       'api::invoices-page.invoices-page': ApiInvoicesPageInvoicesPage;
+      'api::jedalny-listok-page.jedalny-listok-page': ApiJedalnyListokPageJedalnyListokPage;
       'api::member.member': ApiMemberMember;
       'api::navigation.navigation': ApiNavigationNavigation;
+      'api::novinky-page.novinky-page': ApiNovinkyPageNovinkyPage;
       'api::o-nas-stranka.o-nas-stranka': ApiONasStrankaONasStranka;
       'api::order-category.order-category': ApiOrderCategoryOrderCategory;
       'api::order.order': ApiOrderOrder;

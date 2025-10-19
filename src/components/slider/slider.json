@@ -23,6 +23,11 @@
         "videos",
         "audios"
       ]
+    },
+    "button": {
+      "type": "component",
+      "component": "slider.button",
+      "repeatable": false
     }
   },
   "config": {}

@@ -4,7 +4,7 @@
   "info": {
     "singularName": "invoices-page",
     "pluralName": "invoices-pages",
-    "displayName": "invoices-page"
+    "displayName": "Stránka - Verejný register zmlúv"
   },
   "options": {
     "draftAndPublish": true
