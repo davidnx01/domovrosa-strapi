@@ -821,6 +821,35 @@ export interface ApiMemberMember extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiNakladyPageNakladyPage extends Struct.SingleTypeSchema {
+  collectionName: 'naklady_pages';
+  info: {
+    displayName: 'N\u00E1klady page';
+    pluralName: 'naklady-pages';
+    singularName: 'naklady-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.Component<'page.heading', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::naklady-page.naklady-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    tabs: Schema.Attribute.Component<'page.tabs', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiNavigationNavigation extends Struct.SingleTypeSchema {
   collectionName: 'navigations';
   info: {
@@ -1569,11 +1598,11 @@ export interface PluginUploadFolder extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
-    children: Schema.Attribute.Relation<'oneToMany', 'plugin::upload.folder'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     files: Schema.Attribute.Relation<'oneToMany', 'plugin::upload.file'>;
+    children: Schema.Attribute.Relation<'oneToMany', 'plugin::upload.folder'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1777,6 +1806,7 @@ declare module '@strapi/strapi' {
       'api::invoices-page.invoices-page': ApiInvoicesPageInvoicesPage;
       'api::jedalny-listok-page.jedalny-listok-page': ApiJedalnyListokPageJedalnyListokPage;
       'api::member.member': ApiMemberMember;
+      'api::naklady-page.naklady-page': ApiNakladyPageNakladyPage;
       'api::navigation.navigation': ApiNavigationNavigation;
       'api::novinky-page.novinky-page': ApiNovinkyPageNovinkyPage;
       'api::o-nas-stranka.o-nas-stranka': ApiONasStrankaONasStranka;
