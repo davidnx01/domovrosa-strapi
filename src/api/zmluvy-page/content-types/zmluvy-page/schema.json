@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "ekonomika_pages",
+  "collectionName": "zmluvy_pages",
   "info": {
-    "singularName": "ekonomika-page",
-    "pluralName": "ekonomika-pages",
-    "displayName": "Stránka - Ekonomika"
+    "singularName": "zmluvy-page",
+    "pluralName": "zmluvy-pages",
+    "displayName": "Stránka - Register zmlúv"
   },
   "options": {
     "draftAndPublish": true

@@ -4,7 +4,7 @@
   "info": {
     "singularName": "novinky-page",
     "pluralName": "novinky-pages",
-    "displayName": "Novinky page"
+    "displayName": "Stránka - Novinky"
   },
   "options": {
     "draftAndPublish": true
@@ -20,6 +20,11 @@
       "type": "component",
       "component": "page.tabs",
       "repeatable": true
+    },
+    "seo": {
+      "type": "component",
+      "component": "page.seo",
+      "repeatable": false
     }
   }
 }

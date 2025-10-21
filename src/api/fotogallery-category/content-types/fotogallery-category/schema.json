@@ -4,7 +4,7 @@
   "info": {
     "singularName": "fotogallery-category",
     "pluralName": "fotogallery-categories",
-    "displayName": "Fotogallery Category"
+    "displayName": "Kategórie fotogalérií"
   },
   "options": {
     "draftAndPublish": true

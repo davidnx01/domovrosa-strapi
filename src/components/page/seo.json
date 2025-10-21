@@ -11,15 +11,10 @@
     "description": {
       "type": "text"
     },
-    "image": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+    "open_graph": {
+      "type": "component",
+      "component": "open-graph.open-graph",
+      "repeatable": false
     }
   },
   "config": {}

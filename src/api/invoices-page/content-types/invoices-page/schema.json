@@ -4,7 +4,7 @@
   "info": {
     "singularName": "invoices-page",
     "pluralName": "invoices-pages",
-    "displayName": "Stránka - Verejný register zmlúv"
+    "displayName": "Stránka - Objednávky"
   },
   "options": {
     "draftAndPublish": true
@@ -14,6 +14,11 @@
     "heading": {
       "type": "component",
       "component": "page.heading",
+      "repeatable": false
+    },
+    "seo": {
+      "type": "component",
+      "component": "page.seo",
       "repeatable": false
     }
   }

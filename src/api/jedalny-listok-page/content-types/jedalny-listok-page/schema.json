@@ -4,7 +4,7 @@
   "info": {
     "singularName": "jedalny-listok-page",
     "pluralName": "jedalny-listok-pages",
-    "displayName": "jedalny-listok-page"
+    "displayName": "Stránka - Jedálny lístok"
   },
   "options": {
     "draftAndPublish": true
@@ -25,6 +25,11 @@
         "videos",
         "audios"
       ]
+    },
+    "seo": {
+      "type": "component",
+      "component": "page.seo",
+      "repeatable": false
     }
   }
 }

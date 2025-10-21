@@ -4,7 +4,7 @@
   "info": {
     "singularName": "naklady-page",
     "pluralName": "naklady-pages",
-    "displayName": "Náklady page"
+    "displayName": "Stránka - Náklady"
   },
   "options": {
     "draftAndPublish": true
@@ -20,6 +20,11 @@
       "type": "component",
       "component": "page.tabs",
       "repeatable": true
+    },
+    "seo": {
+      "type": "component",
+      "component": "page.seo",
+      "repeatable": false
     }
   }
 }

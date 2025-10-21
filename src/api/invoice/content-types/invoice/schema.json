@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "orders",
+  "collectionName": "invoices",
   "info": {
-    "singularName": "order",
-    "pluralName": "orders",
-    "displayName": "Objednávky"
+    "singularName": "invoice",
+    "pluralName": "invoices",
+    "displayName": "Zmluvy"
   },
   "options": {
     "draftAndPublish": true
@@ -17,13 +17,25 @@
     "price": {
       "type": "string"
     },
-    "date_start": {
-      "type": "string"
-    },
     "publication_date": {
       "type": "string"
     },
-    "signed_by": {
+    "effective_date": {
+      "type": "string"
+    },
+    "signature_date": {
+      "type": "string"
+    },
+    "valid_from": {
+      "type": "string"
+    },
+    "valid_to": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "name": {
       "type": "string"
     },
     "subject": {
@@ -32,13 +44,10 @@
     "partner": {
       "type": "string"
     },
-    "ico": {
-      "type": "string"
-    },
-    "order_category": {
+    "invoice_category": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::order-category.order-category"
+      "target": "api::invoice-category.invoice-category"
     }
   }
 }

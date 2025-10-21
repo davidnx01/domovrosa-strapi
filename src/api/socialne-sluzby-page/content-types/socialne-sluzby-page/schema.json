@@ -20,6 +20,11 @@
       "type": "component",
       "component": "page.tabs",
       "repeatable": true
+    },
+    "seo": {
+      "type": "component",
+      "component": "page.seo",
+      "repeatable": false
     }
   }
 }

@@ -4,7 +4,7 @@
   "info": {
     "singularName": "fotogallery",
     "pluralName": "fotogalleries",
-    "displayName": "Fotogallery"
+    "displayName": "Fotogalérie"
   },
   "options": {
     "draftAndPublish": true

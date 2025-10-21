@@ -489,6 +489,7 @@ export interface ApiDocumentsPageDocumentsPage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'page.seo', false>;
     tabs: Schema.Attribute.Component<'page.tabs', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -518,6 +519,7 @@ export interface ApiEkonomikaPageEkonomikaPage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'page.seo', false>;
     tabs: Schema.Attribute.Component<'page.tabs', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -589,7 +591,7 @@ export interface ApiFotogalleryCategoryFotogalleryCategory
   extends Struct.CollectionTypeSchema {
   collectionName: 'fotogallery_categories';
   info: {
-    displayName: 'Fotogallery Category';
+    displayName: 'Kateg\u00F3rie fotogal\u00E9ri\u00ED';
     pluralName: 'fotogallery-categories';
     singularName: 'fotogallery-category';
   };
@@ -618,7 +620,7 @@ export interface ApiFotogalleryCategoryFotogalleryCategory
 export interface ApiFotogalleryFotogallery extends Struct.CollectionTypeSchema {
   collectionName: 'fotogalleries';
   info: {
-    displayName: 'Fotogallery';
+    displayName: 'Fotogal\u00E9rie';
     pluralName: 'fotogalleries';
     singularName: 'fotogallery';
   };
@@ -678,6 +680,7 @@ export interface ApiGdprPageGdprPage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'page.seo', false>;
     tabs: Schema.Attribute.Component<'page.tabs', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -726,10 +729,110 @@ export interface ApiGeneralGeneral extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
+  collectionName: 'homepages';
+  info: {
+    displayName: 'Domovsk\u00E1 str\u00E1nka';
+    pluralName: 'homepages';
+    singularName: 'homepage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::homepage.homepage'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'page.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiInvoiceCategoryInvoiceCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'invoice_categories';
+  info: {
+    displayName: 'Kateg\u00F3rie zml\u00FAv';
+    pluralName: 'invoice-categories';
+    singularName: 'invoice-category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::invoice-category.invoice-category'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'name'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiInvoiceInvoice extends Struct.CollectionTypeSchema {
+  collectionName: 'invoices';
+  info: {
+    displayName: 'Zmluvy';
+    pluralName: 'invoices';
+    singularName: 'invoice';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    category: Schema.Attribute.String;
+    code: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    effective_date: Schema.Attribute.String;
+    invoice_category: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::invoice-category.invoice-category'
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::invoice.invoice'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    partner: Schema.Attribute.String;
+    price: Schema.Attribute.String;
+    publication_date: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    signature_date: Schema.Attribute.String;
+    subject: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    valid_from: Schema.Attribute.String;
+    valid_to: Schema.Attribute.String;
+  };
+}
+
 export interface ApiInvoicesPageInvoicesPage extends Struct.SingleTypeSchema {
   collectionName: 'invoices_pages';
   info: {
-    displayName: 'Str\u00E1nka - Verejn\u00FD register zml\u00FAv';
+    displayName: 'Str\u00E1nka - Objedn\u00E1vky';
     pluralName: 'invoices-pages';
     singularName: 'invoices-page';
   };
@@ -748,6 +851,7 @@ export interface ApiInvoicesPageInvoicesPage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'page.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -758,7 +862,7 @@ export interface ApiJedalnyListokPageJedalnyListokPage
   extends Struct.SingleTypeSchema {
   collectionName: 'jedalny_listok_pages';
   info: {
-    displayName: 'jedalny-listok-page';
+    displayName: 'Str\u00E1nka - Jed\u00E1lny l\u00EDstok';
     pluralName: 'jedalny-listok-pages';
     singularName: 'jedalny-listok-page';
   };
@@ -781,6 +885,7 @@ export interface ApiJedalnyListokPageJedalnyListokPage
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'page.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -790,7 +895,7 @@ export interface ApiJedalnyListokPageJedalnyListokPage
 export interface ApiMemberMember extends Struct.CollectionTypeSchema {
   collectionName: 'members';
   info: {
-    displayName: 'Member';
+    displayName: 'T\u00EDm';
     pluralName: 'members';
     singularName: 'member';
   };
@@ -824,7 +929,7 @@ export interface ApiMemberMember extends Struct.CollectionTypeSchema {
 export interface ApiNakladyPageNakladyPage extends Struct.SingleTypeSchema {
   collectionName: 'naklady_pages';
   info: {
-    displayName: 'N\u00E1klady page';
+    displayName: 'Str\u00E1nka - N\u00E1klady';
     pluralName: 'naklady-pages';
     singularName: 'naklady-page';
   };
@@ -843,6 +948,7 @@ export interface ApiNakladyPageNakladyPage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'page.seo', false>;
     tabs: Schema.Attribute.Component<'page.tabs', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -888,7 +994,7 @@ export interface ApiNavigationNavigation extends Struct.SingleTypeSchema {
 export interface ApiNovinkyPageNovinkyPage extends Struct.SingleTypeSchema {
   collectionName: 'novinky_pages';
   info: {
-    displayName: 'Novinky page';
+    displayName: 'Str\u00E1nka - Novinky';
     pluralName: 'novinky-pages';
     singularName: 'novinky-page';
   };
@@ -907,6 +1013,7 @@ export interface ApiNovinkyPageNovinkyPage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'page.seo', false>;
     tabs: Schema.Attribute.Component<'page.tabs', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -948,7 +1055,7 @@ export interface ApiOrderCategoryOrderCategory
   extends Struct.CollectionTypeSchema {
   collectionName: 'order_categories';
   info: {
-    displayName: 'Order Category';
+    displayName: 'Kateg\u00F3rie objedn\u00E1vok';
     pluralName: 'order-categories';
     singularName: 'order-category';
   };
@@ -977,7 +1084,7 @@ export interface ApiOrderCategoryOrderCategory
 export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
   collectionName: 'orders';
   info: {
-    displayName: 'Order';
+    displayName: 'Objedn\u00E1vky';
     pluralName: 'orders';
     singularName: 'order';
   };
@@ -1033,6 +1140,7 @@ export interface ApiPostupPrijatiaPostupPrijatia
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'page.seo', false>;
     tabs: Schema.Attribute.Component<'page.tabs', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1063,6 +1171,7 @@ export interface ApiPracovneMiestaPagePracovneMiestaPage
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'page.seo', false>;
     tabs: Schema.Attribute.Component<'page.tabs', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1093,6 +1202,7 @@ export interface ApiProtispolocenskaPageProtispolocenskaPage
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'page.seo', false>;
     tabs: Schema.Attribute.Component<'page.tabs', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1123,6 +1233,7 @@ export interface ApiRehabilitaciaPageRehabilitaciaPage
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'page.seo', false>;
     tabs: Schema.Attribute.Component<'page.tabs', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1212,6 +1323,7 @@ export interface ApiSocialneSluzbyPageSocialneSluzbyPage
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'page.seo', false>;
     tabs: Schema.Attribute.Component<'page.tabs', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1242,6 +1354,7 @@ export interface ApiSpolupracaPageSpolupracaPage
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'page.seo', false>;
     tabs: Schema.Attribute.Component<'page.tabs', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1276,6 +1389,37 @@ export interface ApiZaujmovaCinnostPageZaujmovaCinnostPage
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'page.seo', false>;
+    tabs: Schema.Attribute.Component<'page.tabs', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiZmluvyPageZmluvyPage extends Struct.SingleTypeSchema {
+  collectionName: 'zmluvy_pages';
+  info: {
+    displayName: 'Str\u00E1nka - Register zml\u00FAv';
+    pluralName: 'zmluvy-pages';
+    singularName: 'zmluvy-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.Component<'page.heading', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::zmluvy-page.zmluvy-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'page.seo', false>;
     tabs: Schema.Attribute.Component<'page.tabs', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1803,6 +1947,9 @@ declare module '@strapi/strapi' {
       'api::fotogallery.fotogallery': ApiFotogalleryFotogallery;
       'api::gdpr-page.gdpr-page': ApiGdprPageGdprPage;
       'api::general.general': ApiGeneralGeneral;
+      'api::homepage.homepage': ApiHomepageHomepage;
+      'api::invoice-category.invoice-category': ApiInvoiceCategoryInvoiceCategory;
+      'api::invoice.invoice': ApiInvoiceInvoice;
       'api::invoices-page.invoices-page': ApiInvoicesPageInvoicesPage;
       'api::jedalny-listok-page.jedalny-listok-page': ApiJedalnyListokPageJedalnyListokPage;
       'api::member.member': ApiMemberMember;
@@ -1821,6 +1968,7 @@ declare module '@strapi/strapi' {
       'api::socialne-sluzby-page.socialne-sluzby-page': ApiSocialneSluzbyPageSocialneSluzbyPage;
       'api::spolupraca-page.spolupraca-page': ApiSpolupracaPageSpolupracaPage;
       'api::zaujmova-cinnost-page.zaujmova-cinnost-page': ApiZaujmovaCinnostPageZaujmovaCinnostPage;
+      'api::zmluvy-page.zmluvy-page': ApiZmluvyPageZmluvyPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

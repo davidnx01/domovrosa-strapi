@@ -67,6 +67,17 @@ export interface NavigationLinkNavigationLink extends Struct.ComponentSchema {
   };
 }
 
+export interface OpenGraphOpenGraph extends Struct.ComponentSchema {
+  collectionName: 'components_open_graph_open_graphs';
+  info: {
+    displayName: 'open_graph';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface PageHeading extends Struct.ComponentSchema {
   collectionName: 'components_page_headings';
   info: {
@@ -86,7 +97,7 @@ export interface PageSeo extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    open_graph: Schema.Attribute.Component<'open-graph.open-graph', false>;
     title: Schema.Attribute.String;
   };
 }
@@ -174,6 +185,7 @@ declare module '@strapi/strapi' {
       'heading.heading': HeadingHeading;
       'link-children.link-children': LinkChildrenLinkChildren;
       'navigation-link.navigation-link': NavigationLinkNavigationLink;
+      'open-graph.open-graph': OpenGraphOpenGraph;
       'page.heading': PageHeading;
       'page.seo': PageSeo;
       'page.tabs': PageTabs;

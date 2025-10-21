@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "order_categories",
+  "collectionName": "invoice_categories",
   "info": {
-    "singularName": "order-category",
-    "pluralName": "order-categories",
-    "displayName": "Kategórie objednávok"
+    "singularName": "invoice-category",
+    "pluralName": "invoice-categories",
+    "displayName": "Kategórie zmlúv"
   },
   "options": {
     "draftAndPublish": true
