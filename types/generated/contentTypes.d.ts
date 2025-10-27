@@ -527,6 +527,36 @@ export interface ApiEkonomikaPageEkonomikaPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiFakturyPageFakturyPage extends Struct.SingleTypeSchema {
+  collectionName: 'faktury_pages';
+  info: {
+    displayName: 'Str\u00E1nka - Fakt\u00FAry';
+    pluralName: 'faktury-pages';
+    singularName: 'faktury-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.Component<'page.heading', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::faktury-page.faktury-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'page.seo', false>;
+    tabs: Schema.Attribute.Component<'page.tabs', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFooterSectionFooterSection extends Struct.SingleTypeSchema {
   collectionName: 'footer_sections';
   info: {
@@ -1941,6 +1971,7 @@ declare module '@strapi/strapi' {
       'api::contacts-page.contacts-page': ApiContactsPageContactsPage;
       'api::documents-page.documents-page': ApiDocumentsPageDocumentsPage;
       'api::ekonomika-page.ekonomika-page': ApiEkonomikaPageEkonomikaPage;
+      'api::faktury-page.faktury-page': ApiFakturyPageFakturyPage;
       'api::footer-section.footer-section': ApiFooterSectionFooterSection;
       'api::fotogaleria-stranka.fotogaleria-stranka': ApiFotogaleriaStrankaFotogaleriaStranka;
       'api::fotogallery-category.fotogallery-category': ApiFotogalleryCategoryFotogalleryCategory;
