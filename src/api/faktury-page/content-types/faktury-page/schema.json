@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "pracovne_miesta_pages",
+  "collectionName": "faktury_pages",
   "info": {
-    "singularName": "pracovne-miesta-page",
-    "pluralName": "pracovne-miesta-pages",
-    "displayName": "Stránka - Pracovné miesta"
+    "singularName": "faktury-page",
+    "pluralName": "faktury-pages",
+    "displayName": "Faktury-page"
   },
   "options": {
     "draftAndPublish": true
@@ -25,11 +25,6 @@
       "type": "component",
       "component": "page.seo",
       "repeatable": false
-    },
-    "offer": {
-      "type": "component",
-      "component": "job-offers.job-offers",
-      "repeatable": true
     }
   }
 }
