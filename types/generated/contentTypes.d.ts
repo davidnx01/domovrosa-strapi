@@ -672,6 +672,10 @@ export interface ApiFotogalleryFotogallery extends Struct.CollectionTypeSchema {
       'oneToOne',
       'api::fotogallery-category.fotogallery-category'
     >;
+    gallery: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<

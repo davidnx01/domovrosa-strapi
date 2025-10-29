@@ -39,6 +39,16 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::fotogallery-category.fotogallery-category"
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }
