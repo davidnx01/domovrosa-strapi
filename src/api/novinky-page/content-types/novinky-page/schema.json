@@ -13,7 +13,7 @@
   "attributes": {
     "heading": {
       "type": "component",
-      "component": "heading.heading",
+      "component": "page.heading",
       "repeatable": false
     },
     "tabs": {
