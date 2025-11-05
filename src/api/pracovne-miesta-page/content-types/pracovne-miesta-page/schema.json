@@ -25,6 +25,11 @@
       "type": "component",
       "component": "page.seo",
       "repeatable": false
+    },
+    "offer": {
+      "type": "component",
+      "component": "job-offers.job-offers",
+      "repeatable": true
     }
   }
 }

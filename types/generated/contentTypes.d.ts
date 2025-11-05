@@ -672,6 +672,10 @@ export interface ApiFotogalleryFotogallery extends Struct.CollectionTypeSchema {
       'oneToOne',
       'api::fotogallery-category.fotogallery-category'
     >;
+    gallery: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -1200,6 +1204,7 @@ export interface ApiPracovneMiestaPagePracovneMiestaPage
       'api::pracovne-miesta-page.pracovne-miesta-page'
     > &
       Schema.Attribute.Private;
+    offer: Schema.Attribute.Component<'job-offers.job-offers', true>;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'page.seo', false>;
     tabs: Schema.Attribute.Component<'page.tabs', true>;

@@ -4,13 +4,25 @@
   "info": {
     "singularName": "faktury-page",
     "pluralName": "faktury-pages",
+<<<<<<< HEAD
     "displayName": "Stránka - Faktúry"
+=======
+    "displayName": "Faktury-page"
+>>>>>>> a0bf51547ea73094e750aac97a68f03d00936ee4
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
+<<<<<<< HEAD
+=======
+    "heading": {
+      "type": "component",
+      "component": "page.heading",
+      "repeatable": false
+    },
+>>>>>>> a0bf51547ea73094e750aac97a68f03d00936ee4
     "tabs": {
       "type": "component",
       "component": "page.tabs",
@@ -20,11 +32,14 @@
       "type": "component",
       "component": "page.seo",
       "repeatable": false
+<<<<<<< HEAD
     },
     "heading": {
       "type": "component",
       "component": "page.heading",
       "repeatable": false
+=======
+>>>>>>> a0bf51547ea73094e750aac97a68f03d00936ee4
     }
   }
 }

@@ -43,6 +43,24 @@ export interface HeadingHeading extends Struct.ComponentSchema {
   };
 }
 
+export interface JobOffersJobOffers extends Struct.ComponentSchema {
+  collectionName: 'components_job_offers_job_offers';
+  info: {
+    displayName: 'job-offers';
+  };
+  attributes: {
+    contact_person_email: Schema.Attribute.String;
+    contact_person_name: Schema.Attribute.String;
+    contact_person_phone: Schema.Attribute.String;
+    date_start: Schema.Attribute.String;
+    employment_type: Schema.Attribute.String;
+    job_description: Schema.Attribute.String;
+    requirements: Schema.Attribute.String;
+    role: Schema.Attribute.String;
+    we_offer: Schema.Attribute.String;
+  };
+}
+
 export interface LinkChildrenLinkChildren extends Struct.ComponentSchema {
   collectionName: 'components_link_children_link_children';
   info: {
@@ -183,6 +201,7 @@ declare module '@strapi/strapi' {
       'footer-menu.footer-links': FooterMenuFooterLinks;
       'footer-menu.footer-menu': FooterMenuFooterMenu;
       'heading.heading': HeadingHeading;
+      'job-offers.job-offers': JobOffersJobOffers;
       'link-children.link-children': LinkChildrenLinkChildren;
       'navigation-link.navigation-link': NavigationLinkNavigationLink;
       'open-graph.open-graph': OpenGraphOpenGraph;
