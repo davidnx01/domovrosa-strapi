@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "invoices_pages",
+  "info": {
+    "singularName": "invoices-page",
+    "pluralName": "invoices-pages",
+    "displayName": "Stránka - Objednávky"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "component": "page.heading",
+      "repeatable": false
+    },
+    "seo": {
+      "type": "component",
+      "component": "page.seo",
+      "repeatable": false
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "kind": "singleType",
+  "collectionName": "zaujmova_cinnost_pages",
+  "info": {
+    "singularName": "zaujmova-cinnost-page",
+    "pluralName": "zaujmova-cinnost-pages",
+    "displayName": "Stránka - Záujmová činnosť"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "component": "page.heading",
+      "repeatable": false
+    },
+    "tabs": {
+      "type": "component",
+      "component": "page.tabs",
+      "repeatable": true
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "seo": {
+      "type": "component",
+      "component": "page.seo",
+      "repeatable": false
+    }
+  }
+}

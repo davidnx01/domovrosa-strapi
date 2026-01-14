@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "protispolocenska_pages",
+  "info": {
+    "singularName": "protispolocenska-page",
+    "pluralName": "protispolocenska-pages",
+    "displayName": "Stránka - Protispoločenská"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "component": "page.heading",
+      "repeatable": false
+    },
+    "tabs": {
+      "type": "component",
+      "component": "page.tabs",
+      "repeatable": true
+    },
+    "seo": {
+      "type": "component",
+      "component": "page.seo",
+      "repeatable": false
+    }
+  }
+}

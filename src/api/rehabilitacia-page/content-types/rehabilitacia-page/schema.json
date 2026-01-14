@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "rehabilitacia_pages",
+  "info": {
+    "singularName": "rehabilitacia-page",
+    "pluralName": "rehabilitacia-pages",
+    "displayName": "Stránka - Rehabilitácia"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "component": "page.heading",
+      "repeatable": false
+    },
+    "tabs": {
+      "type": "component",
+      "component": "page.tabs",
+      "repeatable": true
+    },
+    "seo": {
+      "type": "component",
+      "component": "page.seo",
+      "repeatable": false
+    }
+  }
+}

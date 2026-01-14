@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_job_offers_job_offers",
+  "info": {
+    "displayName": "job-offers"
+  },
+  "options": {},
+  "attributes": {
+    "role": {
+      "type": "string"
+    },
+    "job_description": {
+      "type": "string"
+    },
+    "date_start": {
+      "type": "string"
+    },
+    "employment_type": {
+      "type": "string"
+    },
+    "requirements": {
+      "type": "string"
+    },
+    "we_offer": {
+      "type": "string"
+    },
+    "contact_person_name": {
+      "type": "string"
+    },
+    "contact_person_email": {
+      "type": "string"
+    },
+    "contact_person_phone": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

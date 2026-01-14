@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "pracovne_miesta_pages",
+  "info": {
+    "singularName": "pracovne-miesta-page",
+    "pluralName": "pracovne-miesta-pages",
+    "displayName": "Stránka - Pracovné miesta"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "component": "page.heading",
+      "repeatable": false
+    },
+    "tabs": {
+      "type": "component",
+      "component": "page.tabs",
+      "repeatable": true
+    },
+    "seo": {
+      "type": "component",
+      "component": "page.seo",
+      "repeatable": false
+    },
+    "offer": {
+      "type": "component",
+      "component": "job-offers.job-offers",
+      "repeatable": true
+    }
+  }
+}

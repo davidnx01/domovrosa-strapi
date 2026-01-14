@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "invoice_categories",
+  "info": {
+    "singularName": "invoice-category",
+    "pluralName": "invoice-categories",
+    "displayName": "Kategórie zmlúv"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    }
+  }
+}

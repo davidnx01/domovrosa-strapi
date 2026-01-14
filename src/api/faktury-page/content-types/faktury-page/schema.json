@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "faktury_pages",
+  "info": {
+    "singularName": "faktury-page",
+    "pluralName": "faktury-pages",
+    "displayName": "Stránka - Faktúry"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tabs": {
+      "type": "component",
+      "component": "page.tabs",
+      "repeatable": true
+    },
+    "seo": {
+      "type": "component",
+      "component": "page.seo",
+      "repeatable": false
+    },
+    "heading": {
+      "type": "component",
+      "component": "page.heading",
+      "repeatable": false
+    }
+  }
+}

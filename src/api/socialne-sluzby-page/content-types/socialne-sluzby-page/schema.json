@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "socialne_sluzby_pages",
+  "info": {
+    "singularName": "socialne-sluzby-page",
+    "pluralName": "socialne-sluzby-pages",
+    "displayName": "Stránka - Sociálne služby"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "component": "page.heading",
+      "repeatable": false
+    },
+    "tabs": {
+      "type": "component",
+      "component": "page.tabs",
+      "repeatable": true
+    },
+    "seo": {
+      "type": "component",
+      "component": "page.seo",
+      "repeatable": false
+    }
+  }
+}

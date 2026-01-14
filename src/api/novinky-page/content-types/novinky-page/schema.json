@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "novinky_pages",
+  "info": {
+    "singularName": "novinky-page",
+    "pluralName": "novinky-pages",
+    "displayName": "Stránka - Novinky"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "component": "page.heading",
+      "repeatable": false
+    },
+    "tabs": {
+      "type": "component",
+      "component": "page.tabs",
+      "repeatable": true
+    },
+    "seo": {
+      "type": "component",
+      "component": "page.seo",
+      "repeatable": false
+    }
+  }
+}
