@@ -16,9 +16,9 @@
   },
   "dependencies": {
     "@_sh/strapi-plugin-ckeditor": "^6.0.3",
-    "@strapi/plugin-cloud": "5.23.4",
-    "@strapi/plugin-users-permissions": "5.23.4",
-    "@strapi/strapi": "5.23.4",
+    "@strapi/plugin-cloud": "5.62.0",
+    "@strapi/plugin-users-permissions": "5.62.0",
+    "@strapi/strapi": "5.62.0",
     "better-sqlite3": "11.3.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
@@ -29,6 +29,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "baseline-browser-mapping": "^2.9.14",
     "typescript": "^5"
   },
   "engines": {
@@ -38,5 +39,12 @@
   "strapi": {
     "uuid": "3a8c54df-a43d-493a-bca8-b420e8f7c979",
     "installId": "010ec1944e8b4b6de19b7a87da0330463eb8a41104911b59409174e5dc4f779e"
+  },
+  "allowScripts": {
+    "better-sqlite3@11.3.0": true,
+    "esbuild@0.25.12": true,
+    "esbuild@0.28.2": true,
+    "core-js-pure@3.51.0": true,
+    "@swc/core@1.16.18": true
   }
 }
